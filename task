@@ -20,17 +20,23 @@ echo "Hello"
 # Step 6: Save the file using Ctrl+O, Enter, Ctrl+X
 
 # Step 7: Make the script executable
-chmod +x ~/script.sh
+chmod +x script.sh
+./script.sh
+
+#check path
+pwd
+#use the path in next command
 
 # Step 8: Open the Cron scheduler
 crontab -e
-
-** * * * $HOME/script.sh >> $HOME/output.log 2>&1
+*****/home/ubuntu/script.sh >>/home/ubuntu/output.log 2>&1
 
 # Step 9: Save using Ctrl+O, Enter, Ctrl+X
 
-# Step 10: Wait one minute and check the output
-cat ~/output.log
-
-# Step 11: Check Cron status
+# Step 10: Check Cron status
+systemctl start cron
+systemctl enable cron
 systemctl status cron
+
+# Step 11: Wait one minute and check the output
+cat output.log
