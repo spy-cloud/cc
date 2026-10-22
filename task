@@ -29,7 +29,7 @@ pwd
 
 # Step 8: Open the Cron scheduler
 crontab -e
-*****/home/ubuntu/script.sh >>/home/ubuntu/output.log 2>&1
+* * * * * /home/ubuntu/script.sh >> /home/ubuntu/output.log
 
 # Step 9: Save using Ctrl+O, Enter, Ctrl+X
 
